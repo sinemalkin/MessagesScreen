@@ -40,7 +40,7 @@ class ChatHeaderView: UICollectionReusableView {
             backgroundView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             backgroundView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             backgroundView.topAnchor.constraint(equalTo: titleLabel.topAnchor,constant: -5),
-            backgroundView.bottomAnchor.constraint(equalTo:titleLabel.bottomAnchor,constant: 5 ),
+            backgroundView.bottomAnchor.constraint(equalTo:titleLabel.bottomAnchor,constant: 5),
             
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100),

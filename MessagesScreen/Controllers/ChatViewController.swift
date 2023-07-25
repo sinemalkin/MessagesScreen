@@ -26,15 +26,16 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
         self.dataSource = makeDataSource()
         applySnapshot()
     }
+    
     func makeDataSource() -> DataSource? {
         self.dataSource = DataSource(collectionView: chatView.collectionView, cellProvider: {(collectionView,indexPath, message) -> UICollectionViewCell? in
             
-            collectionView.scrollToItem(at: indexPath, at: .top, animated: true)
+            collectionView.scrollToItem(at: indexPath, at: .top, animated: true)//scroll icin
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell
             
-            self.dateFormatter.dateFormat = "HH:mm"
-            message.sender == .me ? cell?.configure(IsMe: true, Message: message.text, Date: self.dateFormatter.string(from: Date())) :
-            cell?.configure(IsMe: false, Message: message.text, Date: self.dateFormatter.string(from: Date()))
+            message.sender == .me ? cell?.configure(IsMe: true, Message: message.text, Date: Date().hourFormatter()) :
+            cell?.configure(IsMe: false, Message: message.text, Date: Date().hourFormatter())
             return cell
         })
         self.dataSource?.supplementaryViewProvider = { [weak self] (collectionView, kind, indexPath) -> UICollectionReusableView? in
@@ -52,7 +53,8 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
         }
         return dataSource
     }
-    fileprivate func updateMessagesDate() {
+    /// Bu fonksiyon, messages dizisindeki mesajlarin tarihlerini gunceller.Calender sinifi kullanilarak mesajin tarihinden bir gun cikarilir,en son mesajin tarihini degistirmez ve guncvellenmis mesajlari messages dizisine atar.Mesajlarin tarihleri bir gun geri alinmis olur
+    func updateMessagesDate() {
         var NewMessages: [Message] = []
         messages.forEach { Message in
             var message = Message
@@ -65,11 +67,11 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
             NewMessages.append(message)
         }
         
-        self.messages = NewMessages
+        self.messages = NewMessages // guncellenmis mesajlar messages array'ine geri atar ve mesajlarin tarihleri guncellenmis olur
     }
-    
+    ///messages array'indeki mesajlarin tarihlerine gore gruplama yapar snapshot ornegini olusturur.mesajlar tarihlerine gore gruplanmis olarak goruntulenir.
     func applySnapshot(animatingDifferences: Bool = true) {
-        sectionTitles.removeAll() // olusturulmus sectionlari sildik
+        sectionTitles.removeAll() // onceden olusturulmus sectionTitles'i siler.Bolum basliklarini temizlemek icin.
         self.snapshot = Snapshot()
         updateMessagesDate()
         
@@ -88,8 +90,8 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
             }
         }
         sectionTitles.forEach { (Section: String, message: Message) in
-            snapshot?.appendSections([Section])
-            snapshot?.appendItems([message], toSection: Section)
+            snapshot?.appendSections([Section]) // bolum basliklarini ekler
+            snapshot?.appendItems([message], toSection: Section) //mesajlari ilgili bolum basliklarina ekler
         }
         if let snapshot {
             dataSource?.apply(snapshot, animatingDifferences: animatingDifferences)
@@ -100,19 +102,18 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
         guard let text = chatView.textField.text, !text.isEmpty else {
             return
         }
-        
         let message = Message(id: UUID(), sender: isMyMessage ? .me : .you , text: text, date: lastMessageDate)
         messages.append(message)
         chatView.textField.text?.removeAll()
         self.applySnapshot()
     }
-        
+    
     private func setupUI() {
         view.backgroundColor = .white
         view.addSubview(chatView)
         
         chatView.yourButton.addTarget(self, action: #selector(youButtonTapped), for: .touchUpInside)
-        chatView.button.addTarget(self, action: #selector(meButtonTapped), for: .touchUpInside)
+        chatView.meButton.addTarget(self, action: #selector(meButtonTapped), for: .touchUpInside)
         chatView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -144,7 +145,7 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
             .underlineStyle: NSUnderlineStyle.single.rawValue,
             .underlineColor: UIColor.black
         ])
-
+        
         let nameLabel = UILabel()
         nameLabel.attributedText = attributedText
         let labelContainer = UIView()
@@ -164,6 +165,7 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
         ]
         navigationItem.leftBarButtonItems = barButtonItems
     }
+    
     
 }
 

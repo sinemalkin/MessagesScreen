@@ -11,14 +11,21 @@ extension Date {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM d, yyyy"
         formatter.locale = Locale(identifier: "en_US")
-        let dayString = formatter.string(from: self)
-        return dayString
+        let dateString = formatter.string(from: self)
+        return dateString
     }
     func dayFormatter() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        dateFormatter.locale = Locale(identifier: "en_US")
-        let dayString = dateFormatter.string(from: self)
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateFormat = "EEEE"
+        dayFormatter.locale = Locale(identifier: "en_US")
+        let dayString = dayFormatter.string(from: self)
         return dayString
+    }
+    func hourFormatter() -> String {
+        let hourFormatter = DateFormatter()
+        hourFormatter.dateFormat = "HH:mm"
+        hourFormatter.timeZone = TimeZone(identifier: "Europe/Istanbul")
+        let hourString = hourFormatter.string(from: self)
+        return hourString
     }
 }

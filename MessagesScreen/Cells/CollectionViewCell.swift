@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class CollectionViewCell: UICollectionViewCell {
     var leadingConstraint: NSLayoutConstraint!
     var trailingConstraint: NSLayoutConstraint!
@@ -18,9 +17,9 @@ class CollectionViewCell: UICollectionViewCell {
         }
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         profileImageView.contentMode = .scaleAspectFill
-        profileImageView.layer.cornerRadius = 15
+        profileImageView.layer.cornerRadius = 12
         profileImageView.clipsToBounds = true
-        profileImageView.layer.borderWidth = 1
+        profileImageView.layer.borderWidth = 0.5
         profileImageView.layer.borderColor = UIColor.black.cgColor
         return profileImageView
     }()
@@ -44,6 +43,7 @@ class CollectionViewCell: UICollectionViewCell {
         stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(dateLabel)
         stackView.layer.cornerRadius = 15
+        stackView.clipsToBounds = true
         stackView.layoutMargins = .init(top: 5, left: 5, bottom: 5, right: 5)
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.axis = .vertical
@@ -66,6 +66,7 @@ extension CollectionViewCell {
     private func setupUI() {
         contentView.addSubview(profileImageView)
         contentView.addSubview(stackView)
+        
         NSLayoutConstraint.activate([
             profileImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             profileImageView.widthAnchor.constraint(equalToConstant: 25),
@@ -76,7 +77,7 @@ extension CollectionViewCell {
             stackView.widthAnchor.constraint(lessThanOrEqualToConstant: 200),
         ])
         leadingConstraint = stackView.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor,constant: 5)
-        trailingConstraint = stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -5)
+        trailingConstraint = stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -10)
     }
     func stackViewLocation(IsMe:Bool) {
         trailingConstraint.isActive = IsMe

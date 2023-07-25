@@ -6,16 +6,15 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController {
     
-    let profileButton: UIButton = {
+    lazy var profileButton: UIButton = {
         let profileButton = UIButton()
         profileButton.translatesAutoresizingMaskIntoConstraints = false
-        profileButton.frame = CGRect(x: 10, y: 10, width: 10, height: 10)
         profileButton.layer.cornerRadius = 50
         profileButton.clipsToBounds = true
         profileButton.setImage(UIImage(named: "michelleWie"), for: .normal)
+        profileButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         return profileButton
     }()
     let golfCoachLabel: UILabel = {
@@ -32,12 +31,8 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         navigationItem.title = " My Coach "
         setupUI()
-        targetFunc()
     }
-    private func targetFunc() {
-        profileButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
-        
-    }
+ 
     @objc func saveButtonTapped() {
         let vc = ChatViewController()
         navigationController?.pushViewController(vc, animated: true)
@@ -46,6 +41,8 @@ class ViewController: UIViewController {
         view.addSubview(profileButton)
         view.addSubview(golfCoachLabel)
         NSLayoutConstraint.activate([
+            profileButton.widthAnchor.constraint(equalToConstant: 100),
+            profileButton.heightAnchor.constraint(equalToConstant: 100),
             profileButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             profileButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             

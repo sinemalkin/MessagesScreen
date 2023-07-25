@@ -55,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DEB38A352A6FA94D00691332 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEC981CA2A6A69C60052CA7C /* ChatView.swift */,
+				DEBE44C52A66B3E900702211 /* ChatHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DEBBB1322A5D274300F72100 = {
 			isa = PBXGroup;
 			children = (
@@ -77,11 +86,11 @@
 				DEBE63712A696E0700C0B946 /* Source */,
 				DEBBB1552A5D27B200F72100 /* App */,
 				DEBBB1572A5D2B5400F72100 /* Cells */,
+				DEB38A352A6FA94D00691332 /* Views */,
 				DEBD74F32A616CCE00DA0610 /* Models */,
 				DEBBB1562A5D27C600F72100 /* Controllers */,
 				DEBBB1472A5D274300F72100 /* MessagesScreen.xcdatamodeld */,
 				DEBBB14F2A5D274300F72100 /* Info.plist */,
-				DEC981CA2A6A69C60052CA7C /* ChatView.swift */,
 			);
 			path = MessagesScreen;
 			sourceTree = "<group>";
@@ -117,7 +126,6 @@
 			children = (
 				DEBE636F2A696CFD00C0B946 /* Functions.swift */,
 				DEBBB15A2A5D409100F72100 /* Message.swift */,
-				DEBE44C52A66B3E900702211 /* ChatHeaderView.swift */,
 				DEC3DFC72A6E50C700D325D9 /* Date.swift */,
 				DEB38A332A6FA6BE00691332 /* Sender.swift */,
 			);

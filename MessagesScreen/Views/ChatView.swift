@@ -20,21 +20,21 @@ class ChatView: UIView, UICollectionViewDelegate {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints =  false
         textField.borderStyle = .roundedRect
-        textField.clipsToBounds = true
-        textField.attributedPlaceholder = NSAttributedString(string: "Type a message...")
-        textField.layer.cornerRadius = 10
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.attributedPlaceholder = NSAttributedString(string: "Type a message...")
+        textField.layer.cornerRadius = 10
+        textField.clipsToBounds = true
         textField.leftViewMode = .always
         return textField
     }()
-    lazy var button:UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
+    lazy var meButton:UIButton = {
+        let meButton = UIButton()
+        meButton.translatesAutoresizingMaskIntoConstraints = false
         let sendImage = UIImage(systemName: "paperplane.circle.fill")
-        button.setImage(sendImage, for: .normal)
-        button.tintColor = UIColor.darkGray
-        return button
+        meButton.setImage(sendImage, for: .normal)
+        meButton.tintColor = UIColor.darkGray
+        return meButton
     }()
     lazy var yourButton:UIButton = {
         let yourButton = UIButton()
@@ -47,16 +47,16 @@ class ChatView: UIView, UICollectionViewDelegate {
     func setupUICollection() {
         addSubview(collectionView)
         addSubview(textField)
-        addSubview(button)
+        addSubview(meButton)
         addSubview(yourButton)
         
         NSLayoutConstraint.activate([
-            button.trailingAnchor.constraint(equalTo: trailingAnchor),
-            button.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -30),
-            button.heightAnchor.constraint(equalToConstant: 25),
-            button.widthAnchor.constraint(equalToConstant: 25),
+            meButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            meButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -30),
+            meButton.heightAnchor.constraint(equalToConstant: 25),
+            meButton.widthAnchor.constraint(equalToConstant: 25),
             
-            yourButton.trailingAnchor.constraint(equalTo: button.leadingAnchor,constant: -5),
+            yourButton.trailingAnchor.constraint(equalTo: meButton.leadingAnchor,constant: -5),
             yourButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -30),
             yourButton.heightAnchor.constraint(equalToConstant: 25),
             yourButton.widthAnchor.constraint(equalToConstant: 25),
@@ -73,10 +73,7 @@ class ChatView: UIView, UICollectionViewDelegate {
     }
     func configureCollectionView() {
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        collectionView.backgroundColor = .clear
         collectionView.delegate =  self
-        collectionView.allowsMultipleSelection = false
-        collectionView.allowsSelection = false
     }
     private func createLayout() -> UICollectionViewLayout {
         let sectionProvider = { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
