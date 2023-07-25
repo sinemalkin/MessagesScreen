@@ -33,7 +33,7 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell
             
             self.dateFormatter.dateFormat = "HH:mm"
-            message.sender == "me" ? cell?.configure(IsMe: true, Message: message.text, Date: self.dateFormatter.string(from: Date())) :
+            message.sender == .me ? cell?.configure(IsMe: true, Message: message.text, Date: self.dateFormatter.string(from: Date())) :
             cell?.configure(IsMe: false, Message: message.text, Date: self.dateFormatter.string(from: Date()))
             return cell
         })
@@ -101,7 +101,7 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
             return
         }
         
-        let message = Message(id: UUID(), sender: isMyMessage ? "me" : "you", recipient: isMyMessage ? "you" : "me", text: text, date: lastMessageDate)
+        let message = Message(id: UUID(), sender: isMyMessage ? .me : .you , text: text, date: lastMessageDate)
         messages.append(message)
         chatView.textField.text?.removeAll()
         self.applySnapshot()

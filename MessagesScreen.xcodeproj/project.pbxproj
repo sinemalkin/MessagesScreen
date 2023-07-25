@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DEB38A342A6FA6BE00691332 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB38A332A6FA6BE00691332 /* Sender.swift */; };
 		DEBBB13F2A5D274300F72100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBB13E2A5D274300F72100 /* AppDelegate.swift */; };
 		DEBBB1412A5D274300F72100 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBB1402A5D274300F72100 /* SceneDelegate.swift */; };
 		DEBBB1432A5D274300F72100 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBB1422A5D274300F72100 /* ChatViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DEB38A332A6FA6BE00691332 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 		DEBBB13B2A5D274300F72100 /* MessagesScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessagesScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBBB13E2A5D274300F72100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEBBB1402A5D274300F72100 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				DEBBB15A2A5D409100F72100 /* Message.swift */,
 				DEBE44C52A66B3E900702211 /* ChatHeaderView.swift */,
 				DEC3DFC72A6E50C700D325D9 /* Date.swift */,
+				DEB38A332A6FA6BE00691332 /* Sender.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				DEBBB1432A5D274300F72100 /* ChatViewController.swift in Sources */,
 				DEC981CB2A6A69C60052CA7C /* ChatView.swift in Sources */,
 				DEBE63702A696CFD00C0B946 /* Functions.swift in Sources */,
+				DEB38A342A6FA6BE00691332 /* Sender.swift in Sources */,
 				DEBBB13F2A5D274300F72100 /* AppDelegate.swift in Sources */,
 				DEBE44C62A66B3E900702211 /* ChatHeaderView.swift in Sources */,
 				DEBBB15B2A5D409100F72100 /* Message.swift in Sources */,

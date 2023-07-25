@@ -8,8 +8,7 @@
 import Foundation
 struct Message: Hashable {
     let id: UUID
-    let sender: String
-    let recipient: String
+    let sender: getSender
     let text: String
     var date: Date
     
@@ -19,5 +18,4 @@ struct Message: Hashable {
     static func == (lhs: Message, rhs: Message) -> Bool {
         lhs.id == rhs.id
     }
-    
 }

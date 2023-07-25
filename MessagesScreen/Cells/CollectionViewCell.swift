@@ -92,6 +92,3 @@ extension CollectionViewCell {
         stackViewLocation(IsMe: IsMe)
     }
 }
-
-
-
