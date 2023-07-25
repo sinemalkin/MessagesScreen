@@ -9,23 +9,37 @@
 /* Begin PBXBuildFile section */
 		DEBBB13F2A5D274300F72100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBB13E2A5D274300F72100 /* AppDelegate.swift */; };
 		DEBBB1412A5D274300F72100 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBB1402A5D274300F72100 /* SceneDelegate.swift */; };
-		DEBBB1432A5D274300F72100 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBB1422A5D274300F72100 /* ViewController.swift */; };
+		DEBBB1432A5D274300F72100 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBB1422A5D274300F72100 /* ChatViewController.swift */; };
 		DEBBB1462A5D274300F72100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBBB1442A5D274300F72100 /* Main.storyboard */; };
 		DEBBB1492A5D274300F72100 /* MessagesScreen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEBBB1472A5D274300F72100 /* MessagesScreen.xcdatamodeld */; };
 		DEBBB14B2A5D274300F72100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEBBB14A2A5D274300F72100 /* Assets.xcassets */; };
 		DEBBB14E2A5D274300F72100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBBB14C2A5D274300F72100 /* LaunchScreen.storyboard */; };
+		DEBBB1592A5D2B7300F72100 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBB1582A5D2B7300F72100 /* CollectionViewCell.swift */; };
+		DEBBB15B2A5D409100F72100 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBB15A2A5D409100F72100 /* Message.swift */; };
+		DEBE44C62A66B3E900702211 /* ChatHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE44C52A66B3E900702211 /* ChatHeaderView.swift */; };
+		DEBE63702A696CFD00C0B946 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE636F2A696CFD00C0B946 /* Functions.swift */; };
+		DEC3DFC82A6E50C700D325D9 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3DFC72A6E50C700D325D9 /* Date.swift */; };
+		DEC981CB2A6A69C60052CA7C /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC981CA2A6A69C60052CA7C /* ChatView.swift */; };
+		DEE43E642A60128E00D8E9AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE43E632A60128E00D8E9AC /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DEBBB13B2A5D274300F72100 /* MessagesScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessagesScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBBB13E2A5D274300F72100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEBBB1402A5D274300F72100 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DEBBB1422A5D274300F72100 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DEBBB1422A5D274300F72100 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		DEBBB1452A5D274300F72100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DEBBB1482A5D274300F72100 /* MessagesScreen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MessagesScreen.xcdatamodel; sourceTree = "<group>"; };
 		DEBBB14A2A5D274300F72100 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEBBB14D2A5D274300F72100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEBBB14F2A5D274300F72100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEBBB1582A5D2B7300F72100 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		DEBBB15A2A5D409100F72100 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		DEBE44C52A66B3E900702211 /* ChatHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHeaderView.swift; sourceTree = "<group>"; };
+		DEBE636F2A696CFD00C0B946 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		DEC3DFC72A6E50C700D325D9 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		DEC981CA2A6A69C60052CA7C /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		DEE43E632A60128E00D8E9AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +72,63 @@
 		DEBBB13D2A5D274300F72100 /* MessagesScreen */ = {
 			isa = PBXGroup;
 			children = (
-				DEBBB13E2A5D274300F72100 /* AppDelegate.swift */,
-				DEBBB1402A5D274300F72100 /* SceneDelegate.swift */,
-				DEBBB1422A5D274300F72100 /* ViewController.swift */,
-				DEBBB1442A5D274300F72100 /* Main.storyboard */,
-				DEBBB14A2A5D274300F72100 /* Assets.xcassets */,
-				DEBBB14C2A5D274300F72100 /* LaunchScreen.storyboard */,
-				DEBBB14F2A5D274300F72100 /* Info.plist */,
+				DEBE63712A696E0700C0B946 /* Source */,
+				DEBBB1552A5D27B200F72100 /* App */,
+				DEBBB1572A5D2B5400F72100 /* Cells */,
+				DEBD74F32A616CCE00DA0610 /* Models */,
+				DEBBB1562A5D27C600F72100 /* Controllers */,
 				DEBBB1472A5D274300F72100 /* MessagesScreen.xcdatamodeld */,
+				DEBBB14F2A5D274300F72100 /* Info.plist */,
+				DEC981CA2A6A69C60052CA7C /* ChatView.swift */,
 			);
 			path = MessagesScreen;
+			sourceTree = "<group>";
+		};
+		DEBBB1552A5D27B200F72100 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DEBBB1402A5D274300F72100 /* SceneDelegate.swift */,
+				DEBBB13E2A5D274300F72100 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DEBBB1562A5D27C600F72100 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DEBBB1422A5D274300F72100 /* ChatViewController.swift */,
+				DEE43E632A60128E00D8E9AC /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DEBBB1572A5D2B5400F72100 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEBBB1582A5D2B7300F72100 /* CollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DEBD74F32A616CCE00DA0610 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DEBE636F2A696CFD00C0B946 /* Functions.swift */,
+				DEBBB15A2A5D409100F72100 /* Message.swift */,
+				DEBE44C52A66B3E900702211 /* ChatHeaderView.swift */,
+				DEC3DFC72A6E50C700D325D9 /* Date.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DEBE63712A696E0700C0B946 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DEBBB14C2A5D274300F72100 /* LaunchScreen.storyboard */,
+				DEBBB14A2A5D274300F72100 /* Assets.xcassets */,
+				DEBBB1442A5D274300F72100 /* Main.storyboard */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +202,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEBBB1432A5D274300F72100 /* ViewController.swift in Sources */,
+				DEBBB1592A5D2B7300F72100 /* CollectionViewCell.swift in Sources */,
+				DEBBB1432A5D274300F72100 /* ChatViewController.swift in Sources */,
+				DEC981CB2A6A69C60052CA7C /* ChatView.swift in Sources */,
+				DEBE63702A696CFD00C0B946 /* Functions.swift in Sources */,
 				DEBBB13F2A5D274300F72100 /* AppDelegate.swift in Sources */,
+				DEBE44C62A66B3E900702211 /* ChatHeaderView.swift in Sources */,
+				DEBBB15B2A5D409100F72100 /* Message.swift in Sources */,
+				DEE43E642A60128E00D8E9AC /* ViewController.swift in Sources */,
+				DEC3DFC82A6E50C700D325D9 /* Date.swift in Sources */,
 				DEBBB1412A5D274300F72100 /* SceneDelegate.swift in Sources */,
 				DEBBB1492A5D274300F72100 /* MessagesScreen.xcdatamodeld in Sources */,
 			);
@@ -297,8 +365,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,8 +392,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
