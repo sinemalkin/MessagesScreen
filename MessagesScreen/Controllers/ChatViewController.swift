@@ -28,17 +28,14 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
     }
     
     func makeDataSource() -> DataSource? {
-        self.dataSource = DataSource(collectionView: chatView.collectionView, cellProvider: {(collectionView,indexPath, message) -> UICollectionViewCell? in
-            
-            collectionView.scrollToItem(at: indexPath, at: .top, animated: true)//scroll icin
-            
+        dataSource = DataSource(collectionView: chatView.collectionView, cellProvider: {(collectionView,indexPath, message) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell
             
             message.sender == .me ? cell?.configure(IsMe: true, Message: message.text, Date: Date().hourFormatter()) :
             cell?.configure(IsMe: false, Message: message.text, Date: Date().hourFormatter())
             return cell
         })
-        self.dataSource?.supplementaryViewProvider = { [weak self] (collectionView, kind, indexPath) -> UICollectionReusableView? in
+        dataSource?.supplementaryViewProvider = { [weak self] (collectionView, kind, indexPath) -> UICollectionReusableView? in
             guard let self else { return nil }
             
             if kind == UICollectionView.elementKindSectionHeader {
@@ -77,7 +74,7 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
         
         for message in messages {
             
-            let dateDiff = Functions().howManyDays(messageDate: message.date , currentDate: lastMessageDate)
+            let dateDiff = howManyDays(messageDate: message.date , currentDate: lastMessageDate)
             if dateDiff == 0 {
                 sectionTitles.append(("Today",message))
             }else if dateDiff == 1 {
@@ -106,6 +103,7 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
         messages.append(message)
         chatView.textField.text?.removeAll()
         self.applySnapshot()
+        scrollToBottom(animated: true)
     }
     
     private func setupUI() {
@@ -166,6 +164,25 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
         navigationItem.leftBarButtonItems = barButtonItems
     }
     
+    func scrollToBottom(animated: Bool = true) {
+        let lastSection = chatView.collectionView.numberOfSections - 1
+        guard lastSection >= 0 else { return }
+
+        let lastItem = chatView.collectionView.numberOfItems(inSection: lastSection) - 1
+        guard lastItem >= 0 else { return }
+
+        let indexPath = IndexPath(item: lastItem, section: lastSection)
+        let extraOffset: CGFloat = 10
+        self.chatView.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: extraOffset, right: 0)
+        self.chatView.collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
+    }
+}
+extension ChatViewController {
     
+    func howManyDays(messageDate : Date , currentDate : Date ) -> Int {
+        let calendar = Calendar.current
+        let gunFarki = calendar.dateComponents([.day], from: messageDate, to: currentDate).day ?? 0
+        return gunFarki
+    }
 }
 

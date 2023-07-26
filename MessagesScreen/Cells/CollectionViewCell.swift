@@ -68,6 +68,7 @@ extension CollectionViewCell {
         contentView.addSubview(stackView)
         
         NSLayoutConstraint.activate([
+            profileImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 5),
             profileImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             profileImageView.widthAnchor.constraint(equalToConstant: 25),
             profileImageView.heightAnchor.constraint(equalToConstant: 25),
@@ -77,7 +78,9 @@ extension CollectionViewCell {
             stackView.widthAnchor.constraint(lessThanOrEqualToConstant: 200),
         ])
         leadingConstraint = stackView.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor,constant: 5)
-        trailingConstraint = stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -10)
+        leadingConstraint.priority = .defaultHigh
+        trailingConstraint = stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -5)
+        trailingConstraint.priority = .defaultHigh
     }
     func stackViewLocation(IsMe:Bool) {
         trailingConstraint.isActive = IsMe

@@ -18,7 +18,6 @@
 		DEBBB1592A5D2B7300F72100 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBB1582A5D2B7300F72100 /* CollectionViewCell.swift */; };
 		DEBBB15B2A5D409100F72100 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBB15A2A5D409100F72100 /* Message.swift */; };
 		DEBE44C62A66B3E900702211 /* ChatHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE44C52A66B3E900702211 /* ChatHeaderView.swift */; };
-		DEBE63702A696CFD00C0B946 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE636F2A696CFD00C0B946 /* Functions.swift */; };
 		DEC3DFC82A6E50C700D325D9 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3DFC72A6E50C700D325D9 /* Date.swift */; };
 		DEC981CB2A6A69C60052CA7C /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC981CA2A6A69C60052CA7C /* ChatView.swift */; };
 		DEE43E642A60128E00D8E9AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE43E632A60128E00D8E9AC /* ViewController.swift */; };
@@ -38,7 +37,6 @@
 		DEBBB1582A5D2B7300F72100 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		DEBBB15A2A5D409100F72100 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		DEBE44C52A66B3E900702211 /* ChatHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHeaderView.swift; sourceTree = "<group>"; };
-		DEBE636F2A696CFD00C0B946 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		DEC3DFC72A6E50C700D325D9 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		DEC981CA2A6A69C60052CA7C /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		DEE43E632A60128E00D8E9AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +62,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		DEB55A412A70F63500D05390 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DEC3DFC72A6E50C700D325D9 /* Date.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DEB55A422A70F69C00D05390 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				DEB38A332A6FA6BE00691332 /* Sender.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		DEBBB1322A5D274300F72100 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +101,8 @@
 				DEBBB1552A5D27B200F72100 /* App */,
 				DEBBB1572A5D2B5400F72100 /* Cells */,
 				DEB38A352A6FA94D00691332 /* Views */,
+				DEB55A412A70F63500D05390 /* Extensions */,
+				DEB55A422A70F69C00D05390 /* Enums */,
 				DEBD74F32A616CCE00DA0610 /* Models */,
 				DEBBB1562A5D27C600F72100 /* Controllers */,
 				DEBBB1472A5D274300F72100 /* MessagesScreen.xcdatamodeld */,
@@ -124,10 +140,7 @@
 		DEBD74F32A616CCE00DA0610 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DEBE636F2A696CFD00C0B946 /* Functions.swift */,
 				DEBBB15A2A5D409100F72100 /* Message.swift */,
-				DEC3DFC72A6E50C700D325D9 /* Date.swift */,
-				DEB38A332A6FA6BE00691332 /* Sender.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,7 +229,6 @@
 				DEBBB1592A5D2B7300F72100 /* CollectionViewCell.swift in Sources */,
 				DEBBB1432A5D274300F72100 /* ChatViewController.swift in Sources */,
 				DEC981CB2A6A69C60052CA7C /* ChatView.swift in Sources */,
-				DEBE63702A696CFD00C0B946 /* Functions.swift in Sources */,
 				DEB38A342A6FA6BE00691332 /* Sender.swift in Sources */,
 				DEBBB13F2A5D274300F72100 /* AppDelegate.swift in Sources */,
 				DEBE44C62A66B3E900702211 /* ChatHeaderView.swift in Sources */,
