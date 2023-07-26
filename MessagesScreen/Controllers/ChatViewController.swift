@@ -9,11 +9,13 @@ import UIKit
 typealias DataSource = UICollectionViewDiffableDataSource<String, Message>
 typealias Snapshot = NSDiffableDataSourceSnapshot<String, Message>
 
+var messages: [Message] = []
+
 class ChatViewController: UIViewController, UICollectionViewDelegate {
     var chatView = ChatView()
     var dataSource : DataSource?
     var snapshot : Snapshot?
-    private var messages: [Message] = []
+   
     var sectionTitles: [(Section: String , message: Message)] = []
     let dateFormatter = DateFormatter()
     var lastMessageDate = Date()
@@ -30,11 +32,13 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
     func makeDataSource() -> DataSource? {
         dataSource = DataSource(collectionView: chatView.collectionView, cellProvider: {(collectionView,indexPath, message) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell
-            
+        
             message.sender == .me ? cell?.configure(IsMe: true, Message: message.text, Date: Date().hourFormatter()) :
             cell?.configure(IsMe: false, Message: message.text, Date: Date().hourFormatter())
+            
             return cell
         })
+        
         dataSource?.supplementaryViewProvider = { [weak self] (collectionView, kind, indexPath) -> UICollectionReusableView? in
             guard let self else { return nil }
             
@@ -57,14 +61,14 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
             var message = Message
             
             if let newDate = Calendar.current.date(byAdding: .day, value: -1, to: message.date) {
-                if self.messages.last != message {
+                if messages.last != message {
                     message.date = newDate
                 }
             }
             NewMessages.append(message)
         }
         
-        self.messages = NewMessages // guncellenmis mesajlar messages array'ine geri atar ve mesajlarin tarihleri guncellenmis olur
+        messages = NewMessages // guncellenmis mesajlar messages array'ine geri atar ve mesajlarin tarihleri guncellenmis olur
     }
     ///messages array'indeki mesajlarin tarihlerine gore gruplama yapar snapshot ornegini olusturur.mesajlar tarihlerine gore gruplanmis olarak goruntulenir.
     func applySnapshot(animatingDifferences: Bool = true) {
@@ -103,8 +107,23 @@ class ChatViewController: UIViewController, UICollectionViewDelegate {
         messages.append(message)
         chatView.textField.text?.removeAll()
         self.applySnapshot()
-        scrollToBottom(animated: true)
+//        let ContentHeight = chatView.collectionView.contentSize.height
+//        let FrameHeight = chatView.collectionView.frame.height
+//        print("collectionViewContentHeight" ,ContentHeight)
+//        print(" chatView.collectionView.frame.height", chatView.collectionView.frame.height)
+//
+//        let diff = ContentHeight - FrameHeight
+//        print("fark " , diff)
+//        if diff >= 0 {
+//            print("sifirdan buyuk",ContentHeight - chatView.scrollBarY)
+//
+//            chatView.collectionView.setContentOffset(.init(x: 0, y:  ContentHeight - chatView.scrollBarY) , animated:true)
+//        }
+        
+
+         scrollToBottom(animated: true)
     }
+    
     
     private func setupUI() {
         view.backgroundColor = .white

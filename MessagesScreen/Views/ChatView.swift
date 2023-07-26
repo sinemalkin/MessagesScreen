@@ -8,6 +8,7 @@
 import UIKit
 
 class ChatView: UIView, UICollectionViewDelegate {
+    var scrollBarY : CGFloat = 0
     
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
@@ -50,6 +51,7 @@ class ChatView: UIView, UICollectionViewDelegate {
         addSubview(meButton)
         addSubview(yourButton)
         
+        
         NSLayoutConstraint.activate([
             meButton.trailingAnchor.constraint(equalTo: trailingAnchor),
             meButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -30),
@@ -88,4 +90,6 @@ class ChatView: UIView, UICollectionViewDelegate {
         let layout = UICollectionViewCompositionalLayout(sectionProvider: sectionProvider)
         return layout
     }
+    
+    
 }
